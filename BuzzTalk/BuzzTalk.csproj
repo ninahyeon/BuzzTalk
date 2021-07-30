@@ -7,9 +7,16 @@
   <ItemGroup>
     <Compile Remove="Migrations\20210729071140_AddUsersToBuzzTalk.cs" />
     <Compile Remove="Migrations\20210729071140_AddUsersToBuzzTalk.Designer.cs" />
+    <Compile Remove="Migrations\20210730024811_AddUsersToBuzzTalk.cs" />
+    <Compile Remove="Migrations\20210730024811_AddUsersToBuzzTalk.Designer.cs" />
+    <Compile Remove="Migrations\20210730075205_IdentityDBUser.cs" />
+    <Compile Remove="Migrations\20210730075205_IdentityDBUser.Designer.cs" />
+    <Compile Remove="Migrations\20210730082011_Extend_IdentityUser.cs" />
+    <Compile Remove="Migrations\20210730082011_Extend_IdentityUser.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.17" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.17" />
@@ -20,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

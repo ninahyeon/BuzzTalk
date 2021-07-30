@@ -1,7 +1,9 @@
 using BuzzTalk.Models;
+using BuzzTalk.Models.AppDBContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +27,9 @@ namespace BuzzTalk
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDBContext>();    //Identity EF 사용하기 위한 configuration
+
             //db 연결 명령어 모두 입력 후엔 nuget 관리자 콘솔에
             //1. add-migration (Migration 이름)
             //2. update-database
@@ -50,8 +54,8 @@ namespace BuzzTalk
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
+            app.UseAuthentication();    // 마치 손님을 집으로 초대할지 말지 결정
+            app.UseAuthorization();     // 집 안으로 들어온 손님이 특정 행동을 해도 될지 말지 결정
 
             app.UseEndpoints(endpoints =>
             {
