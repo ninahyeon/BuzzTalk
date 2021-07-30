@@ -1,0 +1,39 @@
+﻿.login-ko, .login-en{
+    background-image: url("../img/sprite/spr_login.png");
+    background-repeat:no-repeat;
+}
+.login-en{
+    width:200px;
+    height:50px;
+    background-position: 0 0;
+}
+.login-ko {
+    width: 200px;
+    height: 50px;
+    background-position: 0 -50px;
+}
+
+.grey-line {
+    border-color: #717171;
+}
+/* SNS sprite
+.bg-instagram_icon_circle {
+    width: 30px;
+    height: 30px;
+    background: url('css_sprites.png') -4px -4px;
+}
+.bg-kakaotalk_icon_circle {
+    width: 30px;
+    height: 30px;
+    background: url('css_sprites.png') -42px -4px;
+}
+.bg-naver_icon_circle {
+    width: 30px;
+    height: 30px;
+    background: url('css_sprites.png') -80px -4px;
+}
+.bg-facebook_icon_circle {
+    width: 30px;
+    height: 30px;
+    background: url('css_sprites.png') -118px -4px;
+}*/
