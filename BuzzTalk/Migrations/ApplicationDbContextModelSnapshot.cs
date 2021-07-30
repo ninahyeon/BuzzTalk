@@ -26,15 +26,15 @@ namespace BuzzTalk.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("birth_DT")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("nickName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -44,10 +44,6 @@ namespace BuzzTalk.Migrations
 
                     b.Property<DateTime>("registration_DT")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("user_ID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BuzzTalk.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210729071140_AddUsersToBuzzTalk")]
+    [Migration("20210730024811_AddUsersToBuzzTalk")]
     partial class AddUsersToBuzzTalk
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,15 +28,15 @@ namespace BuzzTalk.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("birth_DT")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("nickName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -46,10 +46,6 @@ namespace BuzzTalk.Migrations
 
                     b.Property<DateTime>("registration_DT")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("user_ID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 

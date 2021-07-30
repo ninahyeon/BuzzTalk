@@ -20,5 +20,9 @@ namespace BuzzTalk.Controllers
         {
             return View();
         }
+        public IActionResult Signup()
+        {
+            return View();
+        }
     }
 }
